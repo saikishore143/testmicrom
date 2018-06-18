@@ -21,4 +21,14 @@ public class CrudController {
 	   crudDTO.setSurname("xyz");
        return crudDTO;
     }
+   
+
+   @GetMapping("/greeting")
+    public CrudDTO greeting1() {
+        //System.out.println("==== in greeting ====");
+	   CrudDTO crudDTO =new CrudDTO();
+	   crudDTO.setName("test");
+	   crudDTO.setSurname("xyz");
+       return crudDTO;
+    }
 }
