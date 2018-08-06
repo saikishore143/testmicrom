@@ -34,11 +34,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		  <dependency>
-    <groupId>com.splunk</groupId>
-    <artifactId>splunk</artifactId>
-    <version>1.4.0.0</version>
-  </dependency>
+
 	</dependencies>
 
 	<build>
@@ -50,13 +46,4 @@
 		</plugins>
 	</build>
 	
-	<repositories>
-  <repository>
-    <id>ext-release-local</id>
-    <url>http://splunk.artifactoryonline.com/splunk/ext-releases-local</url>
-  </repository>
-</repositories>
-
-
-
 </project>
