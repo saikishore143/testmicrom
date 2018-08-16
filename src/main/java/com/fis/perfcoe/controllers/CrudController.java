@@ -29,6 +29,24 @@ public class CrudController {
 	   CrudDTO crudDTO =new CrudDTO();
 	   crudDTO.setName("test");
 	   crudDTO.setSurname("xyz");
-       return crudDTO;
+	    try {
+                long st = System.currentTimeMillis();
+                synchronized (this) {
+                    while (true) {
+                        if (System.currentTimeMillis() - st > 5000) {
+                        	System.out.println("==== in greeting ====");
+                             return crudDTO;
+                            
+                        } else {
+                            System.out.println("In syncBlock");
+                           
+                        }
+                    }
+                }
+            } catch (Exception ex) {
+            	 return crudDTO;
+            }
+
+      
     }
 }
