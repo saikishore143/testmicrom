@@ -85,7 +85,7 @@ public class CrudController {
 		return crudDTO;
 	}
 	ArrayList sampleList = new ArrayList<>();
-	// issue is observerd when value is passed as 1
+	// issue is observerd when value is greater than 1
 	@GetMapping("/highmemory")
 	public CrudDTO highMemoryUsage(@Valid @RequestParam int value) {
 		int i = 0;
@@ -94,8 +94,8 @@ public class CrudController {
 		crudDTO.setSurname("xyz");
 		Random random = new Random();
 
-		if (value == 1) {
-			for (i = 1; i < 10000; i++) {
+		if (value >1) {
+			for (i = 1; i < value; i++) {
 				int randomValue = random.nextInt(10000000);
 				sampleList.add(String.valueOf(System.currentTimeMillis())+randomValue);
 				//sampleMap.put(String.valueOf(randomValue), Integer.valueOf(randomValue));
