@@ -1,4 +1,5 @@
 package com.fis.perfcoe.controllers;
+
 import javax.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import java.net.InetAddress;
@@ -36,7 +37,7 @@ public class CrudController {
 
 	// 10 or more user load on the application to observe sync issue
 	@GetMapping("/syncIssue")
-	public CrudDTO syncIssue() {
+	public CrudDTO syncIssue(@Valid @RequestBody int value) {
 		// System.out.println("==== in greeting ====");
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName("test");
@@ -63,7 +64,7 @@ public class CrudController {
 
 	// issue is observerd when value is passed more than '0' and user greater
 	// than 10
-	@PostMapping("/highcpu")
+	@GetMapping("/highcpu")
 	public CrudDTO highCpuUsage(@Valid @RequestBody int value) {
 		int i = 0;
 		CrudDTO crudDTO = new CrudDTO();
