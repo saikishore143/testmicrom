@@ -17,11 +17,11 @@ public class CrudController {
 	private static final String template = "Hello, %s!";
 
 	@PostMapping("/greeting")
-	public CrudDTO greeting(@Valid @RequestBody String name) {
+	public CrudDTO greeting(@Valid @RequestParam String name) {
 		// System.out.println("==== in greeting ====");
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName(name);
-		crudDTO.setSurname("xyz");
+		crudDTO.setSurname("xyz1");
 		return crudDTO;
 	}
 
@@ -37,7 +37,7 @@ public class CrudController {
 
 	// 10 or more user load on the application to observe sync issue
 	@GetMapping("/syncIssue")
-	public CrudDTO syncIssue(@Valid @RequestBody int value) {
+	public CrudDTO syncIssue(@Valid @RequestParam int value) {
 		// System.out.println("==== in greeting ====");
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName("test");
@@ -65,7 +65,7 @@ public class CrudController {
 	// issue is observerd when value is passed more than '0' and user greater
 	// than 10
 	@GetMapping("/highcpu")
-	public CrudDTO highCpuUsage(@Valid @RequestBody int value) {
+	public CrudDTO highCpuUsage(@Valid @RequestParam int value) {
 		int i = 0;
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName("abc");
@@ -85,8 +85,8 @@ public class CrudController {
 	}
 
 	// issue is observerd when value is passed as 1
-	@PostMapping("/highmemory")
-	public CrudDTO highMemoryUsage(@Valid @RequestBody int value) {
+	@GetMapping ("/highmemory")
+	public CrudDTO highMemoryUsage(@Valid @RequestParam int value) {
 		int i = 0;
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName("abc");
@@ -110,8 +110,8 @@ public class CrudController {
 	}
 
 	// issue is observerd when value is passed as 1
-	@PostMapping("/waitissue")
-	public CrudDTO waitIssue(@Valid @RequestBody int value) {
+	@GetMapping("/waitissue")
+	public CrudDTO waitIssue(@Valid @RequestParam int value) {
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName("abc");
 		crudDTO.setSurname("xyz");
