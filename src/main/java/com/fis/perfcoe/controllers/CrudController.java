@@ -83,32 +83,33 @@ public class CrudController {
 
 		return crudDTO;
 	}
-
+	HashMap sampleMap = new HashMap();
 	// issue is observerd when value is passed as 1
-	@GetMapping ("/highmemory")
+	@GetMapping("/highmemory")
 	public CrudDTO highMemoryUsage(@Valid @RequestParam int value) {
 		int i = 0;
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName("abc");
 		crudDTO.setSurname("xyz");
 		Random random = new Random();
-		HashMap sampleMap = new HashMap();
+
 		if (value == 1) {
 			for (i = 1; i < 10000; i++) {
 				int randomValue = random.nextInt(10000000);
 				sampleMap.put(Integer.valueOf(randomValue), String.valueOf(randomValue));
 				sampleMap.put(String.valueOf(randomValue), Integer.valueOf(randomValue));
-				try {
-					Thread.sleep(random.nextInt(10));
-				} catch (InterruptedException ex) {
-					return crudDTO;
-				}
 			}
 
+		} else {
+			sampleMap.clear();
 		}
 		return crudDTO;
 	}
 
+	@GetMapping("/getlargeobject")
+	public HashMap getLargeObject() {
+				return sampleMap;
+	}
 	// issue is observerd when value is passed as 1
 	@GetMapping("/waitissue")
 	public CrudDTO waitIssue(@Valid @RequestParam int value) {
