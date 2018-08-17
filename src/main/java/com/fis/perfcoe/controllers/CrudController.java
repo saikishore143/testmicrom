@@ -4,6 +4,7 @@ import javax.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -83,7 +84,7 @@ public class CrudController {
 
 		return crudDTO;
 	}
-	HashMap sampleMap = new HashMap();
+	ArrayList sampleList = new ArrayList<>();
 	// issue is observerd when value is passed as 1
 	@GetMapping("/highmemory")
 	public CrudDTO highMemoryUsage(@Valid @RequestParam int value) {
@@ -96,19 +97,19 @@ public class CrudController {
 		if (value == 1) {
 			for (i = 1; i < 10000; i++) {
 				int randomValue = random.nextInt(10000000);
-				sampleMap.put(Integer.valueOf(randomValue), String.valueOf(randomValue));
-				sampleMap.put(String.valueOf(randomValue), Integer.valueOf(randomValue));
+				sampleList.add(String.valueOf(System.currentTimeMillis())+randomValue);
+				//sampleMap.put(String.valueOf(randomValue), Integer.valueOf(randomValue));
 			}
 
 		} else {
-			sampleMap.clear();
+			sampleList.clear();
 		}
 		return crudDTO;
 	}
 
 	@GetMapping("/getlargeobject")
-	public HashMap getLargeObject() {
-				return sampleMap;
+	public ArrayList getLargeObject() {
+				return sampleList;
 	}
 	// issue is observerd when value is passed as 1
 	@GetMapping("/waitissue")
