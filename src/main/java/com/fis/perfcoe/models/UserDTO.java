@@ -8,8 +8,7 @@ import javax.persistence.Id;
 
 @Entity
 public class UserDTO {
-	  
-
+	    @Id
 	    private String name;
 	    public String getMessage() {
 			return message;
