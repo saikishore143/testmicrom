@@ -1,4 +1,4 @@
-package com.fis.perfcoe.Repository;
+package com.fis.perfcoe;
 import org.springframework.data.repository.CrudRepository;
 
 import com.fis.perfcoe.models.UserDTO;
