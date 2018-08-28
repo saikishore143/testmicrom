@@ -17,7 +17,7 @@ public class CrudController {
 
 	private static final String template = "Hello, %s!";
 
-	@PostMapping("/greeting")
+	@PostMapping("/greeting12")
 	public CrudDTO greeting(@Valid @RequestParam String name) {
 		// System.out.println("==== in greeting ====");
 		CrudDTO crudDTO = new CrudDTO();
@@ -27,7 +27,7 @@ public class CrudController {
 	}
 
 	@GetMapping("/greeting")
-	public CrudDTO greeting1() {
+	public CrudDTO greetings() {
 		// System.out.println("==== in greeting ====");
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName("test");
