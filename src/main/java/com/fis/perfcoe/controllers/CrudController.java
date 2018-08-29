@@ -27,7 +27,7 @@ public class CrudController {
 	}
 
 	@GetMapping("/greeting")
-	public String greetings() {
+	public String greetings(@Valid @RequestParam String name) {
 		// System.out.println("==== in greeting ====");
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName("test");
