@@ -12,19 +12,19 @@ import com.fis.perfcoe.models.CrudDTO;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class CrudController {
 
 	private static final String template = "Hello, %s!";
 
-	@PostMapping("/greeting12")
+	/*@PostMapping("/greeting12")
 	public CrudDTO greeting(@Valid @RequestParam String name) {
 		// System.out.println("==== in greeting ====");
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName(name);
 		crudDTO.setSurname("xyz1");
 		return crudDTO;
-	}
+	}*/
 
 	@GetMapping("/greeting")
 	public String greetings(@Valid @RequestParam String name) {
