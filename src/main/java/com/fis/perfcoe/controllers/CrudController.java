@@ -32,7 +32,7 @@ public class CrudController {
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName("test");
 		crudDTO.setSurname("xyz");
-		String x="saiabc";
+		String x= new String("saiabc");
 		return x;
 
 	}
