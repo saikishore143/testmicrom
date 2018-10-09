@@ -26,7 +26,7 @@ public class CrudController {
 		return crudDTO;
 	}*/
 
-	@PostMapping("/greeting")
+	@GetMapping("/greeting")
 	public String greetings() {
 		// System.out.println("==== in greeting ====");
 		CrudDTO crudDTO = new CrudDTO();
