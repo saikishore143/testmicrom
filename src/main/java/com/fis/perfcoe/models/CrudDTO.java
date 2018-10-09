@@ -1,10 +1,10 @@
 package com.fis.perfcoe.models;
 import java.util.List;
-
+import java.io.Serializable;
 import com.fasterxml.jackson.annotation.*;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class CrudDTO {
+public class CrudDTO implements Serializable{
 	public CrudDTO()
 	{
 		
