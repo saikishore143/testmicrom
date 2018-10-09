@@ -27,13 +27,23 @@ public class CrudController {
 	}*/
 
 	@GetMapping("/greeting")
-	public String greetings() {
+	public String greeting() {
 		// System.out.println("==== in greeting ====");
 		CrudDTO crudDTO = new CrudDTO();
 		crudDTO.setName("test");
 		crudDTO.setSurname("xyz");
 		String x= new String("saiabc");
 		return x;
+
+	}
+		@GetMapping("/greetings")
+	public CrudDTO greetings() {
+		// System.out.println("==== in greeting ====");
+		CrudDTO crudDTO = new CrudDTO();
+		crudDTO.setName("test");
+		crudDTO.setSurname("xyz");
+		//String x= new String("saiabc");
+		return crudDTO;
 
 	}
 
