@@ -13,8 +13,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.5.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.0.1.RELEASE</version>
+		<relativePath></relativePath> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -34,22 +34,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-		      
-        <!-- JPA Data (We are going to use Repositories, Entities, Hibernate, etc...) -->
-        
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        
-        <!-- Use MySQL Connector-J -->
-        
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
+		  
 	</dependencies>
 
 	<build>
